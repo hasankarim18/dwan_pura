@@ -1,0 +1,18 @@
+{%  liquid
+  assign block_product = closest.product
+%}
+ <div> 
+    <img width="" height="" src="{{  block_product.featured_image | image_url}}" style="width:100%; max-width:300px; max-height:400px; " >
+  </div>
+
+{% schema %}
+  {
+    "name": "Prouct Card Image",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Product Card Image"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,60 @@
+{% liquid
+  assign font_size = block.settings.font_size
+   assign text_align = block.settings.text_align
+%}
+
+<div> 
+  <h2 style="
+    font-size:{{ font_size }}px;
+    text-align:{{ text_align  }};
+    padding:{{  block.settings.spacing }}px 0;
+    " >   
+    {{  block.settings.heading_text }}
+  </h2>
+</div>
+
+{% schema %}
+  {
+    "name": "Heading Global",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading_text",
+        "label": "Heading text"
+      },
+      {
+        "type": "range",
+        "id": "font_size",
+        "label": "Header font size",
+        "max": 100,
+        "min": 30,
+        "step": 1,
+        "default":52
+      },
+       {
+        "type": "range",
+        "id": "spacing",
+        "label": "Spacing",
+        "max": 90,
+        "min": 0,
+        "step": 1,
+        "default":50
+      },
+      {
+        "type": "text_alignment",
+        "id": "text_align",
+        "label": "Text align",
+        "default":"center"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Heading Global",
+        "settings": {
+          "heading_text":"Write your text here"
+        }
+      }
+      
+    ]
+  }
+{% endschema %}

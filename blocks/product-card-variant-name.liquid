@@ -1,0 +1,26 @@
+
+{%  liquid
+  assign block_product = closest.product
+  assign selected_product = block_product.selected_or_first_available_variant
+%}
+  <div> 
+    {% if block_product.has_only_default_variant %}
+      <span style="font-weight:700;"> This product has only one variant! </span>
+      {% else %}
+        <span style="font-weight:700;"> {{  selected_product.title }}  </span>
+    {% endif %}
+    
+   
+  </div>
+
+{% schema %}
+  {
+    "name": "Product card variant name",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Product card variant name"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,128 @@
+{{  'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+
+{{ 'product-hero-bestseller.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'swiper-bundle.min.js'| asset_url }}" defer> </script>
+
+
+
+
+
+{% liquid
+  assign section_id = section.id
+  
+%}
+
+<style> 
+  .{{ section_id}} {
+    padding:0 20px;
+  }
+
+  .{{ section_id}} .product_row{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+   
+  }
+  
+  .{{ section_id}} .product_card{
+    width:300px;
+    height:400px;
+    background:gray;
+  }
+
+   .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+ 
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+</style>
+
+
+
+<div style="padding:{{ section.settings.padding }}px 0;" class="hero_container {{  section_id }}"> 
+
+  <div class="swiper bestSwiper"> 
+    <div class="swiper-wrapper"> 
+       {%  content_for 'blocks' %}
+     </div>    
+     <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM is ready!");
+    
+    var swiper = new Swiper(".bestSwiper", {
+      slidesPerView: 1, // default for small screens
+      spaceBetween: 10, // default
+
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 640px
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        // when window width is >= 1024px
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+      },
+    });
+  });
+</script>
+
+
+{% schema %}
+  {
+    "name": "Product Hero Best Seller",
+    "settings": [
+      {
+        "type": "range",
+        "info": "Section Padding top/bottom",
+        "max": 150,
+        "min": 50,
+        "label": "Padding top/bottom",
+        "step": 1,
+        "default":50,
+        "id": "padding"
+      }
+    ],
+    "blocks": [      
+      {
+        "type": "@theme"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Hero Best Seller"
+      }
+    ]
+  }
+{% endschema %}

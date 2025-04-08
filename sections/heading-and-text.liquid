@@ -1,0 +1,17 @@
+<div>
+   {% content_for 'blocks' %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "Heading and text",
+    "settings": [],
+    "blocks": [{"type":"@theme"}, {"type":"@app"}],
+    "presets": [
+      {
+        "name": "Heading and Text"
+      }
+    ]
+  }
+{% endschema %}

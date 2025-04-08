@@ -1,0 +1,152 @@
+{% liquid
+  assign padding_y = section.settings.paddingy
+  assign bg_color = section.settings.bg_color
+
+%}
+
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag  }}
+
+<script src="{{ 'swiper-bundle.min' | asset_url }}" defer > </script>
+
+
+<style> 
+.custom_announcement_bar{
+  
+}
+.custom_announcement_bar_inner{
+  display:block;
+}
+
+.{{ section.id}} .swiper-slide{
+   background-color:transparent!important;
+}
+
+.{{ section.id }} .customAnnouncementSwiper{
+  position:relative;
+}
+
+.{{ section.id }} .swiper-button-next{ 
+  color:white;
+  display:block!important;
+  position: absolute;
+  z-index: 99;
+  top: 75%;
+  right: 50px;
+  width: 10px;
+  height: 10px;
+  display: block;
+}
+
+
+  .{{ section.id }} .swiper-button-prev{
+  
+  color:white;
+  display:block!important;
+  position: absolute;
+  z-index: 99;
+  top:75%;
+  left: 50px;
+  width: 10px;
+  height: 10px;
+  display: block;
+}
+
+  
+.{{ section.id }}  .swiper-button-next:after {
+  font-size:20px!important;
+}
+
+.{{ section.id }}  .swiper-button-prev:after {
+  font-size:20px!important;
+} 
+
+.{{ section.id }} .swiper-slide div,
+.swiper-slide p,
+.swiper-slide h1,
+.swiper-slide h2,
+.swiper-slide h3,
+.swiper-slide h4,
+.swiper-slide h5,
+.swiper-slide h6,
+.swiper-slide a,
+.swiper-slide section {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#custom_announcement_bar_item{
+  width:100%;
+}
+
+
+
+
+
+  
+</style>
+  
+<section 
+  style="
+  padding:{{ padding_y }}px 0;
+  background-color:{{ bg_color  }};
+ 
+  "
+  class="custom_announcement_bar_inner {{  section.id }}"
+   > 
+ 
+    <div class="swiper customAnnouncementSwiper">
+      <div class="swiper-wrapper"> 
+        {%  content_for 'blocks' %}
+      </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+
+<script> 
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper(".customAnnouncementSwiper", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Custom announcement bar",
+    "class": "custom_announcement_bar",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default":"#eee"
+      }, 
+      {
+        "type": "range",
+        "default":20,
+        "id": "paddingy",
+        "label": "Padding Y",
+        "min": 0,
+        "max": 50
+      }
+    ],
+    "limit": 1,
+    "enabled_on": {
+      "groups": ["header"]
+    },
+    "blocks": [
+      {
+        "type": "@theme"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom announcement bar"
+      }
+    ]
+  }
+{% endschema %}

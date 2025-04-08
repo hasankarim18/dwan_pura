@@ -1,0 +1,45 @@
+<style>
+
+  .global_product_block{
+    width:300px;
+    min-height:500px;
+    background:lightblue;
+    display:block;
+  }
+
+   @media only screen and (max-width: 600px) {
+    .global_product_block {
+      width: 100%;
+    }
+  }
+  
+</style>
+
+{%  liquid
+  assign block_product = all_products[block.settings.block_product]
+%}
+
+<div class="global_product_block swiper-slide">   
+  <div> {%  content_for 'blocks' %} </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Global Product Card",
+    "blocks": [{"type": "@theme"}, {"type": "@app"}],
+    "class": "swiper-slide",
+    "settings": [
+      {
+        "type": "product",
+        "id": "block_product",
+        "label": "Choose a product"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Global Product Card"
+      }
+    ]
+  }
+{% endschema %}
