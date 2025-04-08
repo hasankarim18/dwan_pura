@@ -1,1 +1,79 @@
-{"name":"t:sections.header.name","type":"header","sections":{"custom_announcement_bar_EqBfFJ":{"type":"custom-announcement-bar","blocks":{"custom_announcement_item_YCx9Gm":{"type":"custom-announcement-item","settings":{"ann_text":"<p><a href=\"\/blogs\/news\" title=\"News\"><strong>Announcement text<\/strong><\/a><\/p>","text_color":"#e63131","text_alignment":"center"},"blocks":{}},"custom_announcement_item_qHRQLc":{"type":"custom-announcement-item","settings":{"ann_text":"<p>Announcement text<\/p>","text_color":"#fff","text_alignment":"center"},"blocks":{}}},"block_order":["custom_announcement_item_YCx9Gm","custom_announcement_item_qHRQLc"],"settings":{"bg_color":"#000000","paddingy":0}},"header":{"type":"header","settings":{"logo_position":"middle-left","menu":"main-menu","menu_type_desktop":"dropdown","sticky_header_type":"on-scroll-up","show_line_separator":true,"color_scheme":"scheme-1","menu_color_scheme":"scheme-1","enable_country_selector":true,"enable_language_selector":true,"enable_customer_avatar":true,"mobile_logo_position":"center","margin_bottom":0,"padding_top":20,"padding_bottom":20}}},"order":["custom_announcement_bar_EqBfFJ","header"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "custom_announcement_bar_EqBfFJ": {
+      "type": "custom-announcement-bar",
+      "blocks": {
+        "custom_announcement_item_YCx9Gm": {
+          "type": "custom-announcement-item",
+          "settings": {
+            "ann_text": "<p><a href=\"/blogs/news\" title=\"News\"><strong>Announcement text</strong></a></p>",
+            "text_color": "#e63131",
+            "text_alignment": "center"
+          },
+          "blocks": {}
+        },
+        "custom_announcement_item_qHRQLc": {
+          "type": "custom-announcement-item",
+          "settings": {
+            "ann_text": "<p>Announcement text 2</p>",
+            "text_color": "#ffffff",
+            "text_alignment": "center"
+          },
+          "blocks": {}
+        },
+        "custom_announcement_item_VKjVqL": {
+          "type": "custom-announcement-item",
+          "settings": {
+            "ann_text": "<p>Announcement text 3</p>",
+            "text_color": "#ffffff",
+            "text_alignment": "center"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "custom_announcement_item_YCx9Gm",
+        "custom_announcement_item_qHRQLc",
+        "custom_announcement_item_VKjVqL"
+      ],
+      "settings": {
+        "bg_color": "#000000",
+        "paddingy": 0
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "middle-left",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "custom_announcement_bar_EqBfFJ",
+    "header"
+  ]
+}
